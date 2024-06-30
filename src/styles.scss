@@ -1,1 +1,178 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'fonts.global';
+
+:root {
+  --bg-color: #f8f8f8;
+  --green-standard: #20bf6b;
+  --medium-green-standard: #56d391;
+  --light-green-standard: #78ecae;
+  --purple-standard: #8854d0;
+  --blue-standard: #3867d6;
+  --light-blue-standard: #eef3ff;
+  --red-standard: #eb4d4b;
+
+  --black: #0b1215;
+  --black-light-blue: #8195b3;
+  --black-blue: #102c57;
+
+  --primary-color: #f8f8f8;
+  --secondary-color: #f8f8f8;
+
+  --blue-050: #eef5ff;
+  --blue-100: #d9e8ff;
+  --blue-200: #bcd8ff;
+  --blue-300: #8ec0ff;
+  --blue-400: #599cff;
+  --blue-500: #4281ff;
+  --blue-600: #1b55f5;
+  --blue-700: #1440e1;
+  --blue-800: #1735b6;
+  --blue-900: #19328f;
+  --blue-950: #142057;
+
+  --green-050: #f1fcf4;
+  --green-100: #ddfbe6;
+  --green-200: #bef4cf;
+  --green-300: #8beaa9;
+  --green-400: #5dda85;
+  --green-500: #29be59;
+  --green-600: #1c9d46;
+  --green-700: #1a7b3a;
+  --green-800: #1a6132;
+  --green-900: #17502b;
+  --green-950: #072c14;
+
+  --purple-050: #f7f0fd;
+  --purple-100: #eae3fc;
+  --purple-200: #d9c9f8;
+  --purple-300: #c3aef4;
+  --purple-400: #b085f0;
+  --purple-500: #a471ec;
+  --purple-600: #8f5ce9;
+  --purple-700: #7d4ed6;
+  --purple-800: #6a40c3;
+  --purple-900: #5a33b0;
+  --purple-950: #3e267d;
+
+  --orange-050: #fff8ed;
+  --orange-100: #feefd6;
+  --orange-200: #fcdbac;
+  --orange-300: #fac177;
+  --orange-400: #f69c41;
+  --orange-500: #f48525;
+  --orange-600: #e56511;
+  --orange-700: #be4c10;
+  --orange-800: #973d15;
+  --orange-900: #793315;
+  --orange-950: #421808;
+
+  --gray-050: #f6f7f9;
+  --gray-100: #edeef1;
+  --gray-200: #d7dae0;
+  --gray-300: #b3b9c6;
+  --gray-400: #8a93a6;
+  --gray-500: #6b778c;
+  --gray-600: #5e687e;
+  --gray-700: #464d5e;
+  --gray-800: #3d434f;
+  --gray-900: #363a44;
+  --gray-950: #24262d;
+
+  --botticelli-050: #f4f9fb;
+  --botticelli-100: #e7f2f7;
+  --botticelli-200: #cfe6ee;
+  --botticelli-300: #9ccedd;
+  --botticelli-400: #67b3c9;
+  --botticelli-500: #4499b3;
+  --botticelli-600: #337c96;
+  --botticelli-700: #2a657a;
+  --botticelli-800: #265566;
+  --botticelli-900: #244856;
+  --botticelli-950: #182f39;
+}
+
+* {
+  margin: 0;
+  margin-bottom: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  outline: none;
+  border: 0;
+  box-shadow: none;
+
+  font-family: 'Poppins', sans-serif;
+
+  font-size: 16px;
+  text-decoration: none;
+  transition: 300ms ease-in-out;
+
+  opacity: 0;
+  animation: appear 400ms ease-in-out forwards;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.user-type--warning {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 2.3rem;
+  color: var(--black-blue);
+}
+
+.user-type--sub-warning {
+  font-family: 'Roboto Mono', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--black-light-blue);
+}
+
+.form--field {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 8px;
+
+  &::placeholder {
+    color: rgb(150, 150, 150);
+    font-size: 0.8rem;
+  }
+
+  &:focus {
+    border-color: var(--green-standard);
+  }
+
+  &::placeholder {
+    color: rgb(179, 179, 179);
+    font-size: 0.9rem;
+  }
+}
+
+.form--button-back {
+  width: max-content;
+  padding: 0.75rem 1.3rem;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: var(--dark);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  position: absolute;
+  top: 2rem;
+  left: 5rem;
+}

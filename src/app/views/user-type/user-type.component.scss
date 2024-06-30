@@ -1,0 +1,88 @@
+#user_type {
+  width: 100%;
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: 20% 80%;
+
+  .user-type--aside-steps {
+    background-color: var(--light-blue-standard);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .steps {
+      width: max-content;
+      position: relative;
+      list-style: none;
+      padding-top: 8rem;
+
+      .sub-step {
+        padding: 0.5rem 1.5rem;
+      }
+      .step {
+        padding: 0.25rem 1.5rem;
+      }
+
+      .step,
+      .sub-step {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        border-radius: 8px;
+        cursor: pointer;
+
+        .step--number {
+          width: 30px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: var(--bg-color);
+          font-weight: bold;
+          border-radius: 50%;
+          --circle-color: rgb(197, 191, 191);
+
+          &.selected {
+            --circle-color: var(--green-standard);
+          }
+
+          background-color: var(--circle-color);
+        }
+
+        .step--text {
+          font-family: 'Inter', sans-serif;
+          font-weight: bold;
+          font-size: 1rem;
+          color: var(--black-blue);
+        }
+
+        .step--circle {
+          width: 30px;
+          height: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          --circle-color: rgb(197, 191, 191);
+
+          &.selected {
+            --circle-color: var(--green-standard);
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--circle-color);
+          }
+        }
+      }
+    }
+  }
+
+  .user-type--step {
+    padding: 8rem 6rem 0;
+    position: relative;
+  }
+}

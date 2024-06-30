@@ -1,0 +1,103 @@
+<section id="step_company_form">
+  <div class="step--form-container">
+    <div class="user-type--warning-container">
+      <span class="user-type--warning">Cadastre sua empresa</span>
+      <span class="user-type--sub-warning">Cadastre o seu negócio e aproveite tudo que a Prefexia oferece</span>
+    </div>
+    <form [formGroup]="companyForm" class="form--container">
+      <div class="form--step">
+        <label for="">Nome jurídico</label>
+        <input
+          type="text"
+          placeholder="Nome completo"
+          id="name"
+          name="name"
+          formControlName="name"
+          class="form--field"
+          required
+        />
+      </div>
+      <div class="form--step">
+        <label for="">E-mail</label>
+        <input
+          type="email"
+          placeholder="empresa@dominio.com"
+          id="email"
+          name="email"
+          formControlName="email"
+          class="form--field"
+          required
+        />
+      </div>
+      <div class="form--step">
+        <label for="">Cadastro Nacional de Pessoa Juridica (CNPJ)</label>
+        <input
+          type="text"
+          placeholder="00.000.000/0000-00"
+          id="cnpj"
+          name="cnpj"
+          formControlName="cnpj"
+          class="form--field"
+          mask="00.000.000/0000-00"
+          required
+        />
+      </div>
+
+      <div class="form--step">
+        <label for="">Endereço</label>
+        <input
+          type="text"
+          placeholder="Endereço"
+          id="address"
+          name="address"
+          formControlName="address"
+          class="form--field"
+          required
+        />
+
+        <input
+          type="text"
+          placeholder="Cidade"
+          id="city"
+          name="city"
+          formControlName="city"
+          class="form--field"
+          required
+        />
+
+        <input
+          type="text"
+          placeholder="Estado"
+          id="state"
+          name="state"
+          formControlName="state"
+          class="form--field"
+          required
+        />
+
+        <input
+          type="text"
+          placeholder="CEP"
+          id="postalCode"
+          name="postalCode"
+          formControlName="postalCode"
+          class="form--field"
+          mask="00000-000"
+          required
+        />
+      </div>
+
+      <label for="acceptTerms" class="form--checkbox">
+        <input type="checkbox" name="acceptTerms" id="acceptTerms" formControlName="acceptTerms" />
+        <span>Eu concordo com os <a href="">termos de uso</a></span>
+      </label>
+    </form>
+
+    <div class="group--buttons">
+      <button class="form--button-back" (click)="comeBackStep()">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button class="form--button" [disabled]="!companyForm.valid" (click)="onNextStep()">Continuar →</button>
+    </div>
+  </div>
+</section>

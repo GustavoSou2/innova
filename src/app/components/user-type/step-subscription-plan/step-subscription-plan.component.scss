@@ -1,0 +1,149 @@
+#step_subscription_plan {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-plans {
+  gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+
+  li {
+    list-style: none;
+  }
+}
+
+.pricing-card {
+  --col: var(--black-blue);
+  height: max-content;
+  position: relative;
+  min-width: 360px;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 0 1rem var(--light-blue-standard);
+  // background-color: var(--bg-color);
+  // box-shadow: 0 0.3rem 0.9rem var(--light-blue-standard);
+}
+
+.pricing-card > *:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.pricing-card .heading h4 {
+  color: var(--black-blue);
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 0;
+}
+
+.pricing-card .heading p {
+  color: #8195b3;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.pricing-card .price {
+  position: relative;
+  color: var(--col);
+  font-size: 3rem;
+  font-weight: bold;
+
+  span {
+    font-size: 4rem;
+  }
+}
+
+.pricing-card .price sub {
+  position: absolute;
+  bottom: 20px;
+  color: var(--black-light-blue);
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.pricing-card .features li {
+  color: var(--black-light-blue);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: lighter;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.pricing-card .features li i {
+  background-color: var(--green-standard);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--bg-color);
+  font-size: 0.9rem;
+}
+
+.fa-check::before {
+  margin-top: 3px;
+}
+
+.pricing-card .features li strong {
+  color: var(--green-standard);
+  font-size: 1rem;
+  text-align: left;
+
+  &.fa-check {
+    color: var(--green-standard);
+  }
+
+  &.fa-times {
+    color: var(--red-standard);
+  }
+}
+
+.pricing-card .cta-btn {
+  width: 100%;
+  padding: 9px 0;
+  border-radius: 24px;
+  background-color: var(--green-standard);
+  color: var(--bg-color);
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--col);
+    color: #e4e4e7;
+    transition: all 0.3s ease;
+  }
+}
+
+.pricing-card .cta-btn:active {
+  transition: all 0.3s ease;
+}
+
+.form--button-back {
+  width: max-content;
+  padding: 0.75rem 1.3rem;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark);
+  background-color: transparent;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+}

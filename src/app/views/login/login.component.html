@@ -1,0 +1,50 @@
+<main id="log-in">
+  <section class="log-in--form-container">
+    <form class="log-in--form" [formGroup]="logInForm">
+      <div class="log-in--form-presentation">
+        <span class="log-in--form-title">Entrar</span>
+        <p class="log-in--form-subtitle">Preencha os campos abaixo para entrar na sua conta</p>
+      </div>
+
+      <section class="log-in--form-fields">
+        <input
+          type="email"
+          placeholder="E-mail"
+          id="email"
+          name="email"
+          formControlName="email"
+          class="form--field"
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="Senha"
+          id="password"
+          name="password"
+          formControlName="password"
+          class="form--field"
+          required
+        />
+      </section>
+
+      <button class="form--button" [disabled]="!logInForm.valid" (click)="logIn()">Entrar</button>
+
+      <div class="links--container">
+        <span>Não possui uma conta? 😮 <a routerLink="/sign-up">Clique aqui</a></span>
+      </div>
+    </form>
+  </section>
+  <section class="log-in--banner-container" [ngStyle]="{ backgroundImage: 'url(assets/images/login-bg.jpg)' }">
+    <div class="log-in--banner-detail">
+      <span class="log-in--banner-description">
+        <p>Desbloqueie o potencial completo da sua experiência com Prefexia! 🚀</p>
+        <p>
+          Crie sua conta hoje mesmo e faça parte de uma comunidade global de entusiastas e inovadores. É rápido, fácil e
+          totalmente gratuito!
+        </p>
+      </span>
+      <a class="log-in--button" routerLink="/sign-up"><span class="emoji">📣</span>Register</a>
+    </div>
+  </section>
+</main>

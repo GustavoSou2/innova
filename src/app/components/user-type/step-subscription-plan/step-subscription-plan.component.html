@@ -1,0 +1,132 @@
+<section id="step_subscription_plan">
+
+  <div class="presentation">
+    <span class="user-type--warning">Em qual empresa você é colaborador?</span>
+    <span class="user-type--sub-warning">Pronto para comecar a fazer melhor gestão dos seus projetos?</span>
+  </div>
+  <section class="pricing-plans">
+    <div class="pricing-card basic">
+      <div class="heading">
+        <h4>BASIC</h4>
+        <p>Plano único para microempresas</p>
+      </div>
+      <p class="price">
+        $<span>2</span>
+        <sub>/month</sub>
+      </p>
+      <ul class="features">
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Recursos do processo PDCA
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Suporte por e-mail
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Atualizações mensais
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Limite de 15 ações
+        </li>
+      </ul>
+      <button class="cta-btn" (click)="subscriptionPlanSelected('basic')">Selecionar</button>
+    </div>
+    <div class="pricing-card standard">
+      <div class="heading">
+        <h4>STANDARD</h4>
+        <p>Plano para startups e pequenos negócios</p>
+      </div>
+      <p class="price">
+        $<span>5</span>        
+        <sub>/month</sub>
+      </p>
+      <ul class="features">
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Recursos do processo PDCA
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Suporte por e-mail
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Atualizações mensais
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Notificações por e-mail
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Limite de 35 ações
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Limite de 15 colaboradores
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Relatórios
+        </li>
+      </ul>
+      <button class="cta-btn" (click)="subscriptionPlanSelected('standard')">Selecionar</button>
+    </div>
+    <div class="pricing-card">
+      <div class="heading">
+        <h4>PREMIUM</h4>
+        <p>Plano para grandes empresas</p>
+      </div>
+      <p class="price">
+        $<span>10</span>
+        <sub>/month</sub>
+      </p>
+      <ul class="features">
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Recursos do processo PDCA
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Suporte por e-mail
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Atualizações mensais
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Notificações por e-mail
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <strong>Sem limite</strong> de ações
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          <strong>Sem limite</strong> de colaboradores
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Relatórios
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Dashboard
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Acesso a API
+        </li>
+      </ul>
+      <button class="cta-btn" (click)="subscriptionPlanSelected('enterprise')">Selecionar</button>
+    </div>
+  </section>
+</section>
+
+  <button class="form--button-back" (click)="comeBackStep()">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>

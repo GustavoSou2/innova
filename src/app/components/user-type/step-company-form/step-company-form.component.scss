@@ -1,0 +1,95 @@
+#step_company_form {
+  .banner {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
+
+  .step--form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .user-type--warning-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-type--warning {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 2.3rem;
+    color: var(--black-blue);
+  }
+
+  .user-type--sub-warning {
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--black-light-blue);
+  }
+
+  .form--container {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    label {
+      font-family: 'Inter', sans-serif;
+      font-weight: bold;
+      font-size: 0.9rem;
+      color: var(--black-blue);
+    }
+
+    .form--step:nth-child(4) {
+      input {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .form--checkbox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+
+    span,
+    a {
+      font-size: 0.8rem;
+    }
+  }
+
+  .group--buttons {
+    width: 450px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .form--button {
+    width: 100%;
+    padding: 0.45rem 1.25rem;
+    background-color: var(--green-standard);
+    color: var(--bg-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:nth-child(2) {
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: #20bf6b90;
+    }
+
+    &:disabled {
+      background-color: rgb(238, 238, 238);
+      color: var(--black);
+    }
+  }
+}

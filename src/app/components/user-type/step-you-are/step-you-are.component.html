@@ -1,0 +1,16 @@
+<section id="step_u_are">
+  <span class="user-type--warning">Você é?</span>
+  <div class="options--container">
+    <label class="option--card" for="collaborator" [ngClass]="{ selected: youAre === 'collaborator' }">
+      <i class="fa-solid fa-user"></i>
+      <span>Colaborador</span>
+      <input type="radio" name="u_are" id="collaborator" value="collaborator" [(ngModel)]="youAre" />
+    </label>
+    <label class="option--card" for="company" [ngClass]="{ selected: youAre === 'company' }">
+      <i class="fa-solid fa-briefcase"></i>
+      <span>Empresa</span>
+      <input type="radio" name="u_are" id="company" value="company" [(ngModel)]="youAre" />
+    </label>
+  </div>
+  <button class="user-type--button" [disabled]="youAre == ''" (click)="onNextStep()">Continuar →</button>
+</section>

@@ -1,0 +1,29 @@
+<main id="company">
+  <aside class="company_aside--menu">
+    <span class="company_aside--menu-logo">Prefexia IO</span>
+    <ul class="company_aside--menu-container">
+      @for (item of menu; track $index) {
+        <li class="company_aside--menu-container">
+          <a [href]="item.path">
+            <i [class]="item.icon"></i>
+            <span>{{ item.name }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+    <ul class="company_aside--menu-projects">
+      <li>
+        <a href="">
+          <i class="fa-solid fa-cube"></i>
+          <span>Overview</span>
+        </a>
+      </li>
+    </ul>
+    <section class="company_aside--menu-user">
+      <!-- <img src="https://api.dicebear.com/9.x/fun-emoji/svg?eyes=glasses&backgroundColor=b6e3f4" alt=""> -->
+    </section>
+  </aside>
+  <section class="company--content">
+    <router-outlet />
+  </section>
+</main>

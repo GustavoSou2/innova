@@ -1,0 +1,44 @@
+<section id="step_collaborator_form">
+  <div class="presentation">
+    <span class="user-type--warning">Em qual empresa você é colaborador?</span>
+    <span class="user-type--sub-warning">Pronto para comecar a fazer melhor gestão dos seus projetos?</span>
+  </div>
+  <form [formGroup]="collaboratorForm">
+    <div class="input--select" [ngClass]="{ focused: inputIsFocused }">
+      <input
+        type="text"
+        placeholder="CNPJ"
+        id="cnpj"
+        name="cnpj"
+        formControlName="cnpj"
+        class="form--field"
+        mask="00.000.000/0000-00"
+        #input
+        (focus)="$any((this.inputIsFocused = true))"
+        required
+        autocomplete="off"
+      />
+      @if (inputIsFocused) {
+        <div class="input--select-options">
+          @if (sysCompanies.length === 0) {
+            <div class="input--select-option-empty">Nenhuma empresa encontrada</div>
+          } @else {
+            @for (company of sysCompanies; track $index) {
+              <div class="input--select-option" (click)="selectCompany(company)">
+                <span>{{ company.name }}</span>
+                <p>{{ company.cnpj }}</p>
+              </div>
+            }
+          }
+        </div>
+      }
+    </div>
+  </form>
+  <div class="group--buttons">
+    <button class="form--button" [disabled]="!collaboratorForm.valid" (click)="onNextStep()">Continuar →</button>
+  </div>
+</section>
+
+<button class="form--button-back" (click)="comeBackStep()">
+  <i class="fa-solid fa-chevron-left"></i>
+</button>

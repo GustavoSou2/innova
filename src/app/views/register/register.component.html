@@ -1,0 +1,72 @@
+<main id="register">
+  <section class="register--banner-container" [ngStyle]="{ backgroundImage: 'url(assets/images/banner_one.jpg)' }">
+    <div class="register--banner-detail">
+      <span class="register--banner-description">
+        <p>Desbloqueie o potencial completo da sua experiência com Prefexia! 🚀</p>
+        <p>
+          Crie sua conta hoje mesmo e faça parte de uma comunidade global de entusiastas e inovadores. É rápido, fácil e
+          totalmente gratuito!
+        </p>
+      </span>
+      <a class="register--button" routerLink="/login"><span class="emoji">⌚</span>Login</a>
+    </div>
+  </section>
+  <section class="register--form-container">
+    <form class="register--form" [formGroup]="registerForm">
+      <div class="register--form-presentation">
+        <span class="register--form-title">Crie sua conta</span>
+        <p class="register--form-subtitle">Preencha os campos abaixo para criar sua conta</p>
+      </div>
+
+      <section class="register--form-fields">
+        <input
+          type="text"
+          placeholder="Primeiro nome"
+          id="name"
+          name="name"
+          class="form--field"
+          formControlName="name"
+          required
+        />
+
+        <input
+          type="email"
+          placeholder="E-mail"
+          id="email"
+          name="email"
+          formControlName="email"
+          class="form--field"
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="Senha"
+          id="password"
+          name="password"
+          formControlName="password"
+          class="form--field"
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="Confirme sua senha"
+          id="confirmPassword"
+          name="confirmPassword"
+          formControlName="confirmPassword"
+          class="form--field"
+          required
+        />
+      </section>
+
+      <button class="form--button" type="submit" (click)="signUp()" [disabled]="!registerForm.valid">
+        Criar conta
+      </button>
+
+      <div class="links--container">
+        <span>Já possui uma conta? 🤔 <a routerLink="/login">Clique aqui</a></span>
+      </div>
+    </form>
+  </section>
+</main>

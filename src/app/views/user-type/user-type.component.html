@@ -1,0 +1,40 @@
+<main id="user_type" *ngIf="step$ | async as step">
+  <aside class="user-type--aside-steps">
+    <ul class="steps">
+      <li class="step">
+        <div class="step--number" [ngClass]="{ selected: step >= 1 }">1</div>
+        <div class="step--text">Tipo de usuário</div>
+      </li>
+      <li class="sub-step">
+        <div class="step--circle" [ngClass]="{ selected: step >= 2 && youAre === 'company' }"></div>
+        <div class="step--text">Empresa</div>
+      </li>
+      <li class="sub-step">
+        <div class="step--circle" [ngClass]="{ selected: step >= 2 && youAre === 'collaborator' }"></div>
+        <div class="step--text">Colaborador</div>
+      </li>
+      <li class="step">
+        <div class="step--number" [ngClass]="{ selected: step >= 3 }">2</div>
+        <div class="step--text">Seu plano</div>
+      </li>
+    </ul>
+  </aside>
+  <section class="user-type--step">
+    <app-step-you-are
+      *ngIf="step === 1"
+      (nextStep)="nextStep($event)"
+      (youAreEmit)="youAre = $event"
+    ></app-step-you-are>
+    <app-step-company-form
+      *ngIf="step === 2 && youAre === 'company'"
+      (comeBack)="nextStep(step - 1)"
+      (nextStep)="nextStep($event)"
+    ></app-step-company-form>
+    <app-step-collaborator-form
+      *ngIf="step === 2 && youAre === 'collaborator'"
+      (comeBack)="nextStep(step - 1)"
+      (nextStep)="nextStep($event)"
+    ></app-step-collaborator-form>
+    <app-step-subscription-plan *ngIf="step === 3" (comeBack)="nextStep(step - 1)"></app-step-subscription-plan>
+  </section>
+</main>

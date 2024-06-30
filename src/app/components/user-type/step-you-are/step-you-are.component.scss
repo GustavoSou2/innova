@@ -1,0 +1,75 @@
+#step_u_are {
+  width: max-content;
+  height: 100%;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+
+  .user-type--warning {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--black-blue);
+  }
+
+  .options--container {
+    width: 100%;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .option--card {
+      width: 190px;
+      height: 130px;
+      padding: 0.75rem 1rem;
+      border: 1.75px solid #d5ddee;
+      gap: 10px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-weight: bold;
+
+      i {
+        color: var(--green-standard);
+        font-size: 2rem;
+      }
+
+      input {
+        display: none;
+      }
+
+      &.selected {
+        border-color: var(--green-standard);
+        color: var(--green-standard);
+      }
+
+      &:hover {
+        background-color: #ffffff90;
+      }
+    }
+  }
+
+  .user-type--button {
+    width: 100%;
+    padding: 0.45rem 1.25rem;
+    background-color: var(--green-standard);
+    color: var(--bg-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+      background-color: #20bf6b90;
+    }
+
+    &:disabled {
+      background-color: rgb(238, 238, 238);
+      color: var(--black);
+    }
+  }
+}

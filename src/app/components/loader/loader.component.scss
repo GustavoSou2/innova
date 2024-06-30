@@ -1,0 +1,55 @@
+#loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .circle--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    .circle {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: var(--green-standard);
+      animation: circle 1s ease-in-out infinite forwards var(--delay);
+
+      &:nth-child(1) {
+        --delay: 200ms;
+      }
+      &:nth-child(2) {
+        --delay: 400ms;
+      }
+      &:nth-child(3) {
+        --delay: 600ms;
+      }
+      &:nth-child(4) {
+        --delay: 800ms;
+      }
+    }
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}

@@ -1,0 +1,32 @@
+@if (form$ | async; as form) {
+  <main id="verify_code">
+    <section class="verify-code--form-container">
+      <div class="user-type--warning-container">
+        <span class="user-type--warning">Verifique o código</span>
+        <span class="user-type--sub-warning">Foi enviado para o seu email um código de verficação</span>
+      </div>
+      <form [formGroup]="form" class="form--container">
+        @for (index of [1, 2, 3, 4, 5, 6]; track $index) {
+          <input
+            type="text"
+            placeholder="0"
+            [id]="'code' + index"
+            [name]="'code' + index"
+            [formControlName]="'code' + index"
+            class="form--field"
+            pattern="^\d$"
+            mask="0"
+            #index
+            required
+          />
+        }
+      </form>
+      <div class="group-button">
+        <button class="verify-code--form-button" [disabled]="!form.valid" (click)="verifyCode(form.value)">
+          Validar
+        </button>
+        <button class="resend--form-button">Reenviar código</button>
+      </div>
+    </section>
+  </main>
+}

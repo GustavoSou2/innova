@@ -1,0 +1,105 @@
+#verify_code {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .verify-code--form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .user-type--warning-container {
+    display: flex;
+    flex-direction: column;
+
+    .user-type--warning {
+      font-family: 'Inter', sans-serif;
+      font-weight: bold;
+      font-size: 2rem;
+      color: var(--dark);
+    }
+
+    .user-type--sub-warning {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: rgb(155, 155, 155);
+    }
+  }
+
+  .form--container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    .form--field {
+      width: 60px;
+      height: 70px;
+      padding: 0.75rem 1rem;
+      border: 2px solid #d5ddee;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--dark);
+      text-align: center;
+      background-color: var(--light-blue-standard);
+
+      &:focus {
+        border-color: var(--blue-standard);
+      }
+    }
+  }
+
+  .group-button {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .verify-code--form-button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green-standard);
+    color: var(--dark);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #20bf6b90;
+    }
+
+    &:disabled {
+      background-color: rgb(192, 192, 192);
+      color: rgb(114, 114, 114);
+    }
+  }
+
+  .resend--form-button {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-blue-standard);
+    color: var(--blue-standard);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    font-size: 0.9rem;
+
+  }
+}
