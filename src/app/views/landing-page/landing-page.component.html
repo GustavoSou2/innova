@@ -1,1 +1,257 @@
-<p>landing-page works!</p>
+<main id="landing-page">
+  <section class="landing-page--home">
+    <nav class="landing-page--nav">
+      <span class="landing-page--nav-logo">Innova</span>
+      <ul class="landing-page--nav-menu">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#partners">Parceiros</a></li>
+        <li><a href="#how-it-works">Como trabalhamos</a></li>
+        <li><a href="#service">Serviços</a></li>
+        <li><a href="#about">Sobre nós</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+      <button class="landing-page--nav-button">Agende uma chamada</button>
+    </nav>
+    <section class="landing-page--home-content">
+      <div class="landing-page--home-content-text">
+        <span>Deixe sua marca em boas mãos</span>
+        <p>Nosso compromisso é com a excelência no trabalho e com o sucesso dos nossos clientes.</p>
+        <div class="landing-page--home-content-contact">
+          <input type="text" placeholder="Seu email" class="lading-page--home-content-contact-input" />
+          <button class="landing-page--home-content-contact-button">Vamos conversar</button>
+        </div>
+      </div>
+      <div class="landing-page--home-content-image">
+        <div class="landing-page--home-content-image-container" *ngFor="let image of images">
+          <picture>
+            <source [srcset]="image.src" media="(max-width: 768px)" />
+            <source [srcset]="image.src" />
+            <img [srcset]="image.src" alt="Image" class="home-content-image" />
+          </picture>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section class="landing-page--partners">
+    <span class="landing-page--partners-title">Empresas com que trabalhamos</span>
+    <div class="landing-page--partners-content">
+      @for (svg of svgs; track $index) {
+        <img [src]="svg.src" title="partners" [alt]="svg.title" class="partners-logo" />
+      }
+    </div>
+  </section>
+  <section class="landing-page--how-it-works">
+    <section class="landing-page--how-it-works-explain">
+      <div class="lading-page--how-it-works-explain-hyper-text">
+        <span class="landing-page--how-it-works-title">Como trabalhamos</span>
+        <p class="landing-page--how-it-works-description">
+          Nossa equipe de especialistas trabalha de ponta para ponta com as necessidades de nossos clientes. Fazemos
+          tudo o que podemos para te ajudar a alcancar seus objetivos de negócios.
+        </p>
+      </div>
+      <div class="landing-page--how-it-works-explain-image">
+        <img src="assets/images/it-work/design.jpg" alt="it-work" class="landing-page--how-it-works-image" />
+      </div>
+    </section>
+    <section class="landing-page--how-it-works-steps">
+      @for (step of howItWorkSteps; track $index) {
+        <div class="landing-page--how-it-works-step">
+          <span class="landing-page--how-it-works-step-icon">
+            <img [src]="step.icon" [alt]="step.title" />
+          </span>
+          <div class="landing-page--how-it-works-step-description">
+            <p class="landing-page--how-it-works-step-description-title">{{ step.title }}</p>
+            <p class="landing-page--how-it-works-step-description-text">{{ step.description }}</p>
+          </div>
+        </div>
+      }
+    </section>
+  </section>
+  <section class="landing-page--service">
+    <h1>Serviços</h1>
+    <div class="landing-page--service-column-container">
+      @for (service of services; track $index) {
+        <div class="landing-page--service-column">
+          <div class="lading-page--service-card service-card--image-container">
+            <img [src]="service.image" [alt]="service.title" class="service-card--image" />
+          </div>
+          <div class="lading-page--service-card">
+            <div class="lading-page--service-card-title">{{ service.title }}</div>
+            <div class="lading-page--service-card-description">{{ service.description }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+  <section class="landing-page--invitation">
+    <div class="landing-page--invitation-container">
+      <div class="landing-page--invitation-title-container">
+        <span class="landing-page--invitation-title">Eleve Sua Marca Hoje!</span>
+      </div>
+      <div class="landing-page--invitation-title">
+        <p class="landing-page--invitation-description">
+          Pronto para transformar sua experiência digital? Vamos dominar o mercado juntos! Reserve já os nossos
+          serviços!
+        </p>
+        <button class="landing-page--invitation-button">Vamos conversar</button>
+      </div>
+    </div>
+  </section>
+  <section class="landing-page--work">
+    <span class="landing-page--work-title">Trabalhos recentes</span>
+    <div class="landing-page--work-column-container">
+      @if (works.length !== 0) {
+        @for (work of works; track $index; let i = $index) {
+          <div
+            class="landing-page--work-card"
+            [ngStyle]="{ 'background-color': work.color }"
+            [attr.data-title]="work.title"
+            [style]="'--background-image: ' + work.image"
+          >
+            <img [src]="work.image" [alt]="work.title" class="work-card--image" />
+          </div>
+        }
+      }
+    </div>
+  </section>
+  <section class="landing-page--comments">
+    <section class="landing-page--commitments-numbers-analytics">
+      <section class="landing-page--commitments-numbers-analytics-numbers">
+        @for (number of numbers; track $index) {
+          <div class="landing-page--commitments-numbers-analytics-number">
+            <span class="landing-page--commitments-numbers-analytics-number-content"
+              >{{ number.number }}{{ number.sufix }}</span
+            >
+            <span class="landing-page--commitments-numbers-analytics-number-description">{{ number.description }}</span>
+          </div>
+        }
+      </section>
+      <section class="landing-page--commitments-numbers-analytics-explain">
+        <span class="landing-page--commitments-numbers-analytics-title"> Nosso compromisso </span>
+        <p class="landing-page--commitments-numbers-analytics-description">
+          Nosso compromisso é com a excelência no trabalho e com o sucesso dos nossos clientes. Estamos comprometidos em
+          trabalhar com você de forma colaborativa para entender seus objetivos e criar uma estratégia que os alcance.
+        </p>
+      </section>
+    </section>
+  </section>
+  <section class="landing-page--invitation-to-start">
+    <div class="landing-page--invitation-to-start-container">
+      <img src="assets/images/svg/square.svg" alt="" class="landing-page--invitation-to-start-image" />
+      <div class="landing-page--invitation-to-start-title">
+        <p class="landing-page--invitation-to-start-description">Comece sua jornada com a innova hoje!</p>
+        <button class="landing-page--invitation-to-start-button">Vamos conversar</button>
+      </div>
+      <div class="landing-page--invitation-to-start-circle-container">
+        <div class="landing-page--invitation-to-start-circle">
+          <i class="fa-solid fa-arrow-trend-up"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="landing-page--about">
+    <span class="landing-page--about-title">O que nosso clientes dizem da innova</span>
+    <section class="landing-page--about-comments-container">
+      @for (comment of comments; track $index) {
+        <div class="landing-page--about-comment">
+          <div class="landing-page--about-comment-perfil">
+            <img
+              [src]="'https://randomuser.me/api/portraits/' + comment.gender + '/' + comment.id + '.jpg'"
+              [alt]="comment.name"
+              class="landing-page--about-comment-image"
+            />
+            <div class="landing-page--about-comment-line">
+              <p class="landing-page--about-comment-description">{{ comment.name }}</p>
+              <p class="landing-page--about-comment-smaller">{{ comment.company }}</p>
+            </div>
+          </div>
+
+          <p class="landing-page--about-comment-title">{{ comment.comment }}</p>
+        </div>
+      }
+    </section>
+  </section>
+  <section class="landing-page--contact">
+    <span class="landing-page--contact-title">Peça já seu orçamento!</span>
+    <div class="landing-page--contant-container">
+      <input type="text" placeholder="Seu email" class="lading-page--contact-input" />
+      <button class="landing-page--contact-button">Vamos conversar</button>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__addr">
+      <h1 class="footer__logo">innova</h1>
+    </div>
+
+    <ul class="footer__nav">
+      <li class="nav__item">
+        <h2 class="nav__title">Media</h2>
+
+        <ul class="nav__ul">
+          <li>
+            <a href="#">Online</a>
+          </li>
+
+          <li>
+            <a href="#">Print</a>
+          </li>
+
+          <li>
+            <a href="#">Alternative Ads</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav__item nav__item--extra">
+        <h2 class="nav__title">Menu</h2>
+
+        <ul class="nav__ul nav__ul--extra">
+          <li>
+            <a href="#">Inicio</a>
+          </li>
+
+          <li>
+            <a href="#">Parceiros</a>
+          </li>
+
+          <li>
+            <a href="#">Como trabalhamos</a>
+          </li>
+
+          <li>
+            <a href="#">Serviços</a>
+          </li>
+
+          <li>
+            <a href="#">Sobre</a>
+          </li>
+
+          <li>
+            <a href="#">Contato</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav__item">
+        <h2 class="nav__title">Legal</h2>
+
+        <ul class="nav__ul">
+          <li>
+            <a href="#">Privacy Policy</a>
+          </li>
+
+          <li>
+            <a href="#">Terms of Use</a>
+          </li>
+
+          <li>
+            <a href="#">Sitemap</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav__item">
+        <h2 class="nav__title">&copy; 2024 Something. All rights reserved.</h2>
+      </li>
+    </ul>
+  </footer>
+</main>
